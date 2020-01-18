@@ -60,13 +60,23 @@ class _MyHomePageState extends State<MyHomePage> {
               )),
           RaisedButton(
               child: Text("FREE TRIAL"),
-              onPressed: navigateToNextPage,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SecondRoute()),
+                );
+              },
               color: Colors.blue,
               textColor: Colors.white,
               padding: EdgeInsets.fromLTRB(10, 10, 10, 10)),
           RaisedButton(
               child: Text("Log in"),
-              onPressed: navigateToNextPage,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => SecondRoute()),
+                );
+              },
               color: Colors.blue,
               textColor: Colors.white,
               padding: EdgeInsets.fromLTRB(10, 10, 10, 10))
@@ -74,6 +84,23 @@ class _MyHomePageState extends State<MyHomePage> {
       )),
     );
   }
+}
 
-  navigateToNextPage() {}
+class SecondRoute extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Second Route"),
+      ),
+      body: Center(
+        child: RaisedButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Text('Go back!'),
+        ),
+      ),
+    );
+  }
 }
