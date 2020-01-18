@@ -80,19 +80,47 @@ class CustomUserQuestions extends StatelessWidget {
         appBar: AppBar(
           title: Text("Second Route"),
         ),
-        body: Form(
-            child: Column(children: <Widget>[
-          TextFormField(),
-          RaisedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => GridListGames()),
-              );
-            },
-            child: Text('Submit'),
-          ),
-        ])));
+        body: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.all(15),
+                child: Text(
+                  "How would you describe your mood today:",
+                  style: TextStyle(fontSize: 20),
+                ),
+              ),
+              RaisedButton(
+                color: Colors.lightGreen,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => GridListGames()),
+                  );
+                },
+                child: Text('Positive'),
+              ),
+              RaisedButton(
+                color: Colors.yellow,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => GridListGames()),
+                  );
+                },
+                child: Text('Neutral'),
+              ),
+              RaisedButton(
+                color: Colors.red,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => GridListGames()),
+                  );
+                },
+                child: Text('Negative'),
+              ),
+            ]));
   }
 }
 
@@ -100,9 +128,7 @@ class GridListGames extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Third Route"),
-      ),
+      appBar: AppBar(title: Text("Third Route")),
       body: Center(
         child: RaisedButton(
             onPressed: () {
@@ -122,7 +148,7 @@ class GridListGames extends StatelessWidget {
                         child: Column(
                       children: <Widget>[
                         Text(
-                          'Item 1',
+                          'Attention',
                           style: Theme.of(context).textTheme.headline,
                         ),
                         Image(
@@ -138,7 +164,7 @@ class GridListGames extends StatelessWidget {
                         child: Column(
                       children: <Widget>[
                         Text(
-                          'Item 2',
+                          'Cognitive control',
                           style: Theme.of(context).textTheme.headline,
                         ),
                         Image(
@@ -154,7 +180,7 @@ class GridListGames extends StatelessWidget {
                         child: Column(
                       children: <Widget>[
                         Text(
-                          'Item 3',
+                          'Processing speed',
                           style: Theme.of(context).textTheme.headline,
                         ),
                         Image(
@@ -170,7 +196,7 @@ class GridListGames extends StatelessWidget {
                         child: Column(
                       children: <Widget>[
                         Text(
-                          'Item 4',
+                          'Judgement',
                           style: Theme.of(context).textTheme.headline,
                         ),
                         Image(
@@ -186,7 +212,7 @@ class GridListGames extends StatelessWidget {
                         child: Column(
                       children: <Widget>[
                         Text(
-                          'Item 5',
+                          'Problem Solving',
                           style: Theme.of(context).textTheme.headline,
                         ),
                         Image(
@@ -202,13 +228,45 @@ class GridListGames extends StatelessWidget {
                         child: Column(
                       children: <Widget>[
                         Text(
-                          'Item 6',
+                          'Continuous attention',
                           style: Theme.of(context).textTheme.headline,
                         ),
                         Image(
                             width: 100,
                             height: 100,
                             image: AssetImage('assets/images/6.png'))
+                      ],
+                    ))),
+                Container(
+                    padding: const EdgeInsets.all(8),
+                    color: Colors.teal[700],
+                    child: Center(
+                        child: Column(
+                      children: <Widget>[
+                        Text(
+                          'Memory',
+                          style: Theme.of(context).textTheme.headline,
+                        ),
+                        Image(
+                            width: 100,
+                            height: 100,
+                            image: AssetImage('assets/images/7.jpg'))
+                      ],
+                    ))),
+                Container(
+                    padding: const EdgeInsets.all(8),
+                    color: Colors.teal[800],
+                    child: Center(
+                        child: Column(
+                      children: <Widget>[
+                        Text(
+                          'Comprehension',
+                          style: Theme.of(context).textTheme.headline,
+                        ),
+                        Image(
+                            width: 100,
+                            height: 100,
+                            image: AssetImage('assets/images/8.jpg'))
                       ],
                     ))),
               ],
