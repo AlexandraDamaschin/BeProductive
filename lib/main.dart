@@ -63,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SecondRoute()),
+                  MaterialPageRoute(builder: (context) => GridListGames()),
                 );
               },
               color: Colors.blue,
@@ -74,7 +74,7 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SecondRoute()),
+                  MaterialPageRoute(builder: (context) => GridListGames()),
                 );
               },
               color: Colors.blue,
@@ -86,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class SecondRoute extends StatelessWidget {
+class GridListGames extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,11 +95,28 @@ class SecondRoute extends StatelessWidget {
       ),
       body: Center(
         child: RaisedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: Text('Go back!'),
-        ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: GridView.count(
+              crossAxisCount: 2,
+              childAspectRatio: (40 / 20),
+              children: List.generate(100, (index) {
+                return Center(
+                    child: Column(
+                  children: <Widget>[
+                    Text(
+                      'Item $index',
+                      style: Theme.of(context).textTheme.headline,
+                    ),
+                    Image(
+                        width: 50,
+                        height: 50,
+                        image: AssetImage('assets/images/flower.jpg'))
+                  ],
+                ));
+              }),
+            )),
       ),
     );
   }
