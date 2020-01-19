@@ -341,42 +341,65 @@ class GridListGames extends StatelessWidget {
 }
 
 class Game extends StatelessWidget {
+  int _selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Attention test"),
-        ),
-        body: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Padding(
-                padding: EdgeInsets.all(15),
-                child: Text(
-                  "How would you describe your mood today:",
-                  style: TextStyle(fontSize: 20),
-                ),
-              ),
-              RaisedButton(
-                color: Colors.lightGreen,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => GridListGames()),
-                  );
-                },
-                child: Text('RED'),
-              ),
-              RaisedButton(
-                color: Colors.yellow,
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => GridListGames()),
-                  );
-                },
-                child: Text('BLACK'),
-              )
-            ]));
+      appBar: AppBar(
+        title: Text("Attention test"),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Padding(
+            padding: EdgeInsets.all(15),
+            child: Text(
+              "Does the meaning of the first box match the background color of the second box?",
+              style: TextStyle(fontSize: 20),
+            ),
+          ),
+          RaisedButton(
+            color: Colors.lightGreen,
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => GridListGames()),
+              );
+            },
+            child: Text('RED'),
+          ),
+          RaisedButton(
+            color: Colors.yellow,
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => GridListGames()),
+              );
+            },
+            child: Text('BLACK'),
+          )
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.remove_circle_outline),
+            title: Text('NO'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.done),
+            title: Text('YES'),
+          )
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.teal[800],
+        onTap: _onItemTapped,
+      ),
+    );
+  }
+
+  void _onItemTapped(int index) {
+    _selectedIndex = index;
   }
 }
