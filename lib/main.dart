@@ -142,136 +142,241 @@ class GridListGames extends StatelessWidget {
               crossAxisCount: 2,
               children: <Widget>[
                 Container(
-                    padding: const EdgeInsets.all(8),
-                    color: Colors.teal[200],
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          'Attention',
-                          style: Theme.of(context).textTheme.headline,
-                        ),
-                        Image(
-                            width: 75,
-                            height: 75,
-                            image: AssetImage('assets/images/1.png'))
-                      ],
-                    )),
+                  padding: const EdgeInsets.all(8),
+                  color: Colors.teal[200],
+                  child: FlatButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Game()),
+                        );
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            'Attention',
+                            style: Theme.of(context).textTheme.headline,
+                          ),
+                          Image(
+                              width: 75,
+                              height: 75,
+                              image: AssetImage('assets/images/1.png'))
+                        ],
+                      )),
+                ),
                 Container(
-                    padding: const EdgeInsets.all(8),
-                    color: Colors.teal[200],
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          'Cognitive control',
-                          style: Theme.of(context).textTheme.headline,
-                        ),
-                        Image(
-                            width: 75,
-                            height: 75,
-                            image: AssetImage('assets/images/2.jfif'))
-                      ],
-                    )),
+                  padding: const EdgeInsets.all(8),
+                  color: Colors.teal[200],
+                  child: FlatButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Game()),
+                        );
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            'Cognitive control',
+                            style: Theme.of(context).textTheme.headline,
+                          ),
+                          Image(
+                              width: 75,
+                              height: 75,
+                              image: AssetImage('assets/images/2.jfif'))
+                        ],
+                      )),
+                ),
                 Container(
-                    padding: const EdgeInsets.all(8),
-                    color: Colors.teal[300],
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          'Processing speed',
-                          style: Theme.of(context).textTheme.headline,
-                        ),
-                        Image(
-                            width: 75,
-                            height: 75,
-                            image: AssetImage('assets/images/3.png'))
-                      ],
-                    )),
+                  padding: const EdgeInsets.all(8),
+                  color: Colors.teal[300],
+                  child: FlatButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Game()),
+                        );
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            'Processing speed',
+                            style: Theme.of(context).textTheme.headline,
+                          ),
+                          Image(
+                              width: 75,
+                              height: 75,
+                              image: AssetImage('assets/images/3.png'))
+                        ],
+                      )),
+                ),
                 Container(
-                    padding: const EdgeInsets.all(8),
-                    color: Colors.teal[400],
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          'Judgement',
-                          style: Theme.of(context).textTheme.headline,
-                        ),
-                        Image(
-                            width: 75,
-                            height: 75,
-                            image: AssetImage('assets/images/4.jfif'))
-                      ],
-                    )),
+                  padding: const EdgeInsets.all(8),
+                  color: Colors.teal[400],
+                  child: FlatButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Game()),
+                        );
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            'Judgement',
+                            style: Theme.of(context).textTheme.headline,
+                          ),
+                          Image(
+                              width: 75,
+                              height: 75,
+                              image: AssetImage('assets/images/4.jfif'))
+                        ],
+                      )),
+                ),
                 Container(
-                    padding: const EdgeInsets.all(8),
-                    color: Colors.teal[500],
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          'Problem Solving',
-                          style: Theme.of(context).textTheme.headline,
-                        ),
-                        Image(
-                            width: 75,
-                            height: 75,
-                            image: AssetImage('assets/images/5.png'))
-                      ],
-                    )),
+                  padding: const EdgeInsets.all(8),
+                  color: Colors.teal[500],
+                  child: FlatButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Game()),
+                        );
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            'Problem Solving',
+                            style: Theme.of(context).textTheme.headline,
+                          ),
+                          Image(
+                              width: 75,
+                              height: 75,
+                              image: AssetImage('assets/images/5.png'))
+                        ],
+                      )),
+                ),
                 Container(
-                    padding: const EdgeInsets.all(8),
-                    color: Colors.teal[600],
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          'Continuous attention',
-                          style: Theme.of(context).textTheme.headline,
-                        ),
-                        Image(
-                            width: 75,
-                            height: 75,
-                            image: AssetImage('assets/images/6.png'))
-                      ],
-                    )),
+                  padding: const EdgeInsets.all(8),
+                  color: Colors.teal[600],
+                  child: FlatButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Game()),
+                        );
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            'Continuous attention',
+                            style: Theme.of(context).textTheme.headline,
+                          ),
+                          Image(
+                              width: 75,
+                              height: 75,
+                              image: AssetImage('assets/images/6.png'))
+                        ],
+                      )),
+                ),
                 Container(
-                    padding: const EdgeInsets.all(8),
-                    color: Colors.teal[700],
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          'Memory',
-                          style: Theme.of(context).textTheme.headline,
-                        ),
-                        Image(
-                            width: 75,
-                            height: 75,
-                            image: AssetImage('assets/images/7.jpg'))
-                      ],
-                    )),
+                  padding: const EdgeInsets.all(8),
+                  color: Colors.teal[700],
+                  child: FlatButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Game()),
+                        );
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            'Memory',
+                            style: Theme.of(context).textTheme.headline,
+                          ),
+                          Image(
+                              width: 75,
+                              height: 75,
+                              image: AssetImage('assets/images/7.jpg'))
+                        ],
+                      )),
+                ),
                 Container(
-                    padding: const EdgeInsets.all(8),
-                    color: Colors.teal[800],
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          'Comprehension',
-                          style: Theme.of(context).textTheme.headline,
-                        ),
-                        Image(
-                            width: 75,
-                            height: 75,
-                            image: AssetImage('assets/images/8.jpg'))
-                      ],
-                    )),
+                  padding: const EdgeInsets.all(8),
+                  color: Colors.teal[800],
+                  child: FlatButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Game()),
+                        );
+                      },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            'Comprehension',
+                            style: Theme.of(context).textTheme.headline,
+                          ),
+                          Image(
+                              width: 75,
+                              height: 75,
+                              image: AssetImage('assets/images/8.jpg'))
+                        ],
+                      )),
+                ),
               ],
             )),
       ),
     );
+  }
+}
+
+class Game extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text("Attention test"),
+        ),
+        body: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.all(15),
+                child: Text(
+                  "How would you describe your mood today:",
+                  style: TextStyle(fontSize: 20),
+                ),
+              ),
+              RaisedButton(
+                color: Colors.lightGreen,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => GridListGames()),
+                  );
+                },
+                child: Text('RED'),
+              ),
+              RaisedButton(
+                color: Colors.yellow,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => GridListGames()),
+                  );
+                },
+                child: Text('BLACK'),
+              )
+            ]));
   }
 }
