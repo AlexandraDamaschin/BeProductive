@@ -148,7 +148,7 @@ class GridListGames extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Game()),
+                          MaterialPageRoute(builder: (context) => Game1()),
                         );
                       },
                       child: Column(
@@ -172,7 +172,7 @@ class GridListGames extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Game()),
+                          MaterialPageRoute(builder: (context) => Game1()),
                         );
                       },
                       child: Column(
@@ -196,7 +196,7 @@ class GridListGames extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Game()),
+                          MaterialPageRoute(builder: (context) => Game1()),
                         );
                       },
                       child: Column(
@@ -220,7 +220,7 @@ class GridListGames extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Game()),
+                          MaterialPageRoute(builder: (context) => Game1()),
                         );
                       },
                       child: Column(
@@ -244,7 +244,7 @@ class GridListGames extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Game()),
+                          MaterialPageRoute(builder: (context) => Game1()),
                         );
                       },
                       child: Column(
@@ -268,7 +268,7 @@ class GridListGames extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Game()),
+                          MaterialPageRoute(builder: (context) => Game1()),
                         );
                       },
                       child: Column(
@@ -292,7 +292,7 @@ class GridListGames extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Game()),
+                          MaterialPageRoute(builder: (context) => Game1()),
                         );
                       },
                       child: Column(
@@ -316,7 +316,7 @@ class GridListGames extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => Game()),
+                          MaterialPageRoute(builder: (context) => Game1()),
                         );
                       },
                       child: Column(
@@ -340,7 +340,7 @@ class GridListGames extends StatelessWidget {
   }
 }
 
-class Game extends StatelessWidget {
+class Game1 extends StatelessWidget {
   int _selectedIndex = 0;
 
   @override
@@ -362,20 +362,20 @@ class Game extends StatelessWidget {
           RaisedButton(
             color: Colors.lightGreen,
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => GridListGames()),
-              );
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(builder: (context) => GridListGames()),
+              // );
             },
             child: Text('RED'),
           ),
           RaisedButton(
             color: Colors.yellow,
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => GridListGames()),
-              );
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(builder: (context) => GridListGames()),
+              // );
             },
             child: Text('BLACK'),
           )
@@ -394,12 +394,71 @@ class Game extends StatelessWidget {
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.teal[800],
-        onTap: _onItemTapped,
+        onTap: (test) {
+          _onItemTapped1(context);
+        },
       ),
     );
   }
 
-  void _onItemTapped(int index) {
+  void _onItemTapped1(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => Game2()),
+    );
+  }
+}
+
+class Game2 extends StatelessWidget {
+  int _selectedIndex = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Attention test"),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Padding(
+            padding: EdgeInsets.all(15),
+            child: Text(
+              "Does the meaning of the first box match the background color of the second box?",
+              style: TextStyle(fontSize: 20),
+            ),
+          ),
+          RaisedButton(
+            color: Colors.lightGreen,
+            onPressed: () {},
+            child: Text('BLUE'),
+          ),
+          RaisedButton(
+            color: Colors.blue,
+            onPressed: () {},
+            child: Text('GREEN'),
+          )
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.remove_circle_outline),
+            title: Text('NO'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.done),
+            title: Text('YES'),
+          )
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.teal[800],
+        onTap: _onItemTapped2,
+      ),
+    );
+  }
+
+  void _onItemTapped2(int index) {
     _selectedIndex = index;
   }
 }
