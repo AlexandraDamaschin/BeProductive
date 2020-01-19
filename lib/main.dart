@@ -341,8 +341,6 @@ class GridListGames extends StatelessWidget {
 }
 
 class Game1 extends StatelessWidget {
-  int _selectedIndex = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -392,7 +390,6 @@ class Game1 extends StatelessWidget {
             title: Text('YES'),
           )
         ],
-        currentIndex: _selectedIndex,
         selectedItemColor: Colors.teal[800],
         onTap: (test) {
           _onItemTapped1(context);
@@ -453,12 +450,63 @@ class Game2 extends StatelessWidget {
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: Colors.teal[800],
-        onTap: _onItemTapped2,
+        onTap: (test) {
+          _onItemTapped2(context);
+        },
       ),
     );
   }
 
-  void _onItemTapped2(int index) {
-    _selectedIndex = index;
+  void _onItemTapped2(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => FinalStatement()),
+    );
+  }
+}
+
+class FinalStatement extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text("Your results"),
+        ),
+        body: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Padding(
+                padding: EdgeInsets.all(25),
+                child: Text(
+                    "Your score was 10.75, the average score for this test is 11.38. You ranked 55th for the first play time."),
+              ),
+              Text(
+                "Insights",
+                style: TextStyle(fontSize: 25),
+              ),
+              Padding(
+                padding: EdgeInsets.all(25),
+                child: Text(
+                    "You are more attentive in the mornings (higher average score than in the afternoon or night)"),
+              ),
+              Padding(
+                padding: EdgeInsets.all(25),
+                child: Text(
+                    "Less screen time activity generates a higher score. When you spent more than an hour navigating within your app, your average score was smaller by 10%"),
+              ),
+              Text(
+                "Tips",
+                style: TextStyle(fontSize: 25),
+              ),
+              Padding(
+                padding: EdgeInsets.all(25),
+                child: Text(
+                    "Try going for a 15 walk before the next time you run the experiment"),
+              ),
+              Padding(
+                  padding: EdgeInsets.all(25),
+                  child: Text(
+                      "Stop multitasking for a few minutes before starting the experiment"))
+            ]));
   }
 }
